@@ -36,7 +36,7 @@ public class TodoServer {
                 }
             }
         } catch (IOException e) {
-            System.out.println("Не могу стартовать сервер");
+            System.out.println("Can't start server");
             e.printStackTrace();
         }
     }
