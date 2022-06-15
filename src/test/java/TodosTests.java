@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 public class TodosTests {
     Todos sut;
-    String task = "B";
+    String task = "A";
 
     @BeforeEach
     public void init() {
@@ -27,8 +27,8 @@ public class TodosTests {
         expected.listTask.add(task);
 
         sut.addTask(task);
-        sut.addTask("A");
-        sut.removeTask("A");
+        sut.addTask("B");
+        sut.removeTask("B");
 
         Assertions.assertEquals(expected.listTask, sut.listTask);
     }
@@ -37,7 +37,7 @@ public class TodosTests {
     public void testGetAllTask() {
         Todos list = new Todos();
         list.listTask.add(task);
-        list.listTask.add("A");
+        list.listTask.add("B");
         StringBuilder stringBuilder = new StringBuilder();
         for (String s : list.listTask) {
             stringBuilder.append(s).append(" ");
@@ -45,7 +45,7 @@ public class TodosTests {
         String expected = stringBuilder.toString();
 
         sut.addTask(task);
-        sut.addTask("A");
+        sut.addTask("B");
         String result = sut.getAllTasks();
 
         Assertions.assertEquals(expected, result);
